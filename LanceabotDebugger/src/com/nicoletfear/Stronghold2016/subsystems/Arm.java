@@ -107,6 +107,9 @@ public class Arm extends Subsystem {
     		return true;
     	}
     }
+    public double getSetpoint(){
+    	return position;
+    }
     //returns true when pressed
     /*
     public void raisePortcullis(){

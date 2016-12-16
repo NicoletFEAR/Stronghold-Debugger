@@ -123,7 +123,16 @@ public class Robot extends IterativeRobot {
 	 */
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		
+		//put smartdashboard debugging constants here
 		SmartDashboard.putNumber("Arm Position", arm.positionMotor.getEncPosition());
+		SmartDashboard.putBoolean("true when pressed, Top Limit Switch:", OI.limitSwitchTop.get());
+		SmartDashboard.putBoolean("true when pressed, Bottom Limit Switch:", OI.limitSwitchBottom.get());
+		SmartDashboard.putBoolean("Intake limit switch true when pressed", OI.limitSwitchIntake.get());
+		SmartDashboard.putNumber("PID arm setpoint", arm.getSetpoint());
+		SmartDashboard.putNumber("P value", arm.positionMotor.getP());
+		SmartDashboard.putNumber("I value", arm.positionMotor.getI());
+		SmartDashboard.putNumber("D", arm.positionMotor.getD());
 	}
 
 	/**
