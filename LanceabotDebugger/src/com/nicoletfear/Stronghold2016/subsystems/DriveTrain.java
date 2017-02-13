@@ -10,12 +10,11 @@
 
 
 package com.nicoletfear.Stronghold2016.subsystems;
-
+import com.ctre.CANTalon;
 import com.nicoletfear.Stronghold2016.Robot;
 import com.nicoletfear.Stronghold2016.RobotMap;
 import com.nicoletfear.Stronghold2016.commands.*;
 
-import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 

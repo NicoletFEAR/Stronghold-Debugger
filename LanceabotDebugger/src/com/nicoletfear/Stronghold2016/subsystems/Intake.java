@@ -2,12 +2,8 @@
 package com.nicoletfear.Stronghold2016.subsystems;
 
 import com.nicoletfear.Stronghold2016.OI;
-import com.nicoletfear.Stronghold2016.Robot;
 import com.nicoletfear.Stronghold2016.RobotMap;
-import com.nicoletfear.Stronghold2016.commands.IntakeCommand;
-
-import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.command.Command;
+import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**

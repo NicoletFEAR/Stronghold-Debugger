@@ -1,8 +1,6 @@
 
 package com.nicoletfear.Stronghold2016.commands;
 
-import edu.wpi.first.wpilibj.CANTalon;
-import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.command.Command;
 
 import com.nicoletfear.Stronghold2016.OI;

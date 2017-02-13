@@ -1,10 +1,12 @@
 
 package com.nicoletfear.Stronghold2016;
 
+import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import com.nicoletfear.Stronghold2016.subsystems.Arm;
@@ -40,7 +42,7 @@ public class Robot extends IterativeRobot {
 	public Boolean SkynetEnabled = true;
 
 	Command autonomousCommand;
-	SendableChooser chooser;
+	SendableChooser<CommandGroup> chooser;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -49,7 +51,7 @@ public class Robot extends IterativeRobot {
     
 	public void robotInit() {
 		oi = new OI();
-		chooser = new SendableChooser();
+		chooser = new SendableChooser<CommandGroup>();
 		chooser.addDefault("StandStill", new AutonomousStop());
 		chooser.addObject("Rock Wall", new AutonomousRockWall());
 		chooser.addObject("Moat", new AutonomousMoat());
@@ -58,10 +60,8 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("Low Bar", new AutonomousLowBar());
 		// makes objects to be seen in SmartDashboard
 		SmartDashboard.putData("Auto Selector", chooser);
-		CameraServer camera = CameraServer.getInstance();
-		camera.setQuality(50);
-		camera.startAutomaticCapture("cam0");
-		camera.startAutomaticCapture();
+		CvSource out = CameraServer.getInstance().putVideo("cam0", 640, 480);
+		UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
 		//autonomousCommand = new Forwards(); TO DO
 		// sets command to autonomous forwards
 	}

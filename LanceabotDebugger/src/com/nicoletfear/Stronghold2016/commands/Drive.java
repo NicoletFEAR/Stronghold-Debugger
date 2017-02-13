@@ -11,6 +11,7 @@
 
 package com.nicoletfear.Stronghold2016.commands;
 
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.command.Command;
 import com.nicoletfear.Stronghold2016.Robot;
 
@@ -36,8 +37,8 @@ public class  Drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	//gets input from controller and drives bot
-    	double rightInput = Robot.oi.getRight().getY();
-    	double leftInput = Robot.oi.getLeft().getY();
+    	double rightInput = Robot.oi.gameMech.getY(GenericHID.Hand.kRight);
+    	double leftInput = Robot.oi.gameMech.getY(GenericHID.Hand.kLeft);
     	Robot.driveTrain.drive(leftInput, rightInput);
     }
 

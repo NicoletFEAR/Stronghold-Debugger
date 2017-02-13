@@ -6,10 +6,9 @@ import com.nicoletfear.Stronghold2016.Robot;
 import com.nicoletfear.Stronghold2016.RobotMap;
 import com.nicoletfear.Stronghold2016.commands.HoldArm;
 
-import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+import com.ctre.CANTalon;
 /**
  *
  */
