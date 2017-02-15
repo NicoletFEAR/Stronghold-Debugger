@@ -60,8 +60,9 @@ public class Robot extends IterativeRobot {
 		chooser.addObject("Low Bar", new AutonomousLowBar());
 		// makes objects to be seen in SmartDashboard
 		SmartDashboard.putData("Auto Selector", chooser);
-		CvSource out = CameraServer.getInstance().putVideo("cam0", 640, 480);
-		UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+		
+		UsbCamera cam0 = CameraServer.getInstance().startAutomaticCapture("Alice", 0);
+		cam0.setResolution(640, 320);
 		//autonomousCommand = new Forwards(); TO DO
 		// sets command to autonomous forwards
 	}
